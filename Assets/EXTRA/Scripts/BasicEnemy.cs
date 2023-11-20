@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyDone : MonoBehaviour
+public class BasicEnemy : MonoBehaviour
 {
     [Header("Stats")]
     public int health;

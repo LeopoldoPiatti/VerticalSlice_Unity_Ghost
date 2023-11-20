@@ -10,9 +10,12 @@ public class ProjectileAddon : MonoBehaviour
 
     private bool targetHit;
 
+    public GameObject granadeParts;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        granadeParts.SetActive (false);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,20 +27,23 @@ public class ProjectileAddon : MonoBehaviour
             targetHit = true;
 
         // check if you hit an enemy
-        if(collision.gameObject.GetComponent<BasicEnemy>() != null)
+        if (collision.gameObject.GetComponent<BasicEnemy>() != null)
         {
             BasicEnemy enemy = collision.gameObject.GetComponent<BasicEnemy>();
 
             enemy.TakeDamage(damage);
 
+            granadeParts.SetActive(true);
+
             // destroy projectile
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            //Destroy(granadeParts);
         }
 
         // make sure projectile sticks to surface
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
 
         // make sure projectile moves with target
-        transform.SetParent(collision.transform);
+        //transform.SetParent(collision.transform);
     }
 }

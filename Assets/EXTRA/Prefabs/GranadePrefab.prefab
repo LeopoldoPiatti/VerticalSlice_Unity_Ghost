@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
       propertyPath: m_Name
-      value: Granade Variant
+      value: GranadePrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66,6 +66,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 721613542194766636}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1786761971436214950}
   m_SourcePrefab: {fileID: 100100000, guid: b039a8ffd82d014478be586f978e5fe4, type: 3}
 --- !u!1 &2184271323701291678 stripped
 GameObject:
@@ -122,3 +125,17 @@ CapsuleCollider:
   m_Height: 0.50270724
   m_Direction: 1
   m_Center: {x: -0.0058114976, y: 0.25346178, z: 0}
+--- !u!114 &1786761971436214950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184271323701291678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf077d7f4578984449eac378328ca605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  granadeParts: {fileID: 6507971170287581360, guid: df19f7a64df24a545a411d6b2dca37f6, type: 3}
