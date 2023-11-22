@@ -1,54 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    Transform target = null;
-    [SerializeField]
-    float speed = 1.0f;
-    [SerializeField]
-    float innerBuffer = 0.1f;
-    [SerializeField]
-    float outerBuffer = 1.5f;
-    bool moving;
-    Vector3 offset;
-
-    void Start()
-    {
-        offset = target.position + transform.position;
-    }
+    public float velocidadMovimiento = 5f;
+    public float velocidadRotacion = 45f;
 
     void Update()
     {
-        Vector3 cameraTargetPosition = target.position + offset;
-        Vector3 heading = cameraTargetPosition - transform.position;
-        float distance = heading.magnitude;
-        Vector3 direction = heading / distance;
+        MoverCamara();
+        RotarCamara();
+    }
 
-        if (distance > outerBuffer)
-            moving = true;
+    void MoverCamara()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        if (moving)
+        Vector3 direccion = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (direccion.magnitude >= 0.1f)
         {
-            if (distance > innerBuffer)
-                transform.position += direction * Time.deltaTime * speed * Mathf.Max(distance, 1f);
-            else
-            {
-                transform.position = cameraTargetPosition;
-                moving = false;
-            }
+            Vector3 movimiento = Camera.main.transform.TransformDirection(direccion);
+            movimiento.y = 0;
+            transform.Translate(movimiento * velocidadMovimiento * Time.deltaTime, Space.World);
         }
     }
 
-    void OnDrawGizmos()
+    void RotarCamara()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(target.position + offset, innerBuffer);
-        Gizmos.DrawWireSphere(target.position + offset, outerBuffer);
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // Rotar la cámara en sentido antihorario (en incrementos de 90 grados)
+            transform.Rotate(Vector3.up, -90, Space.World);
+        }
 
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, innerBuffer);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Rotar la cámara en sentido horario (en incrementos de 90 grados)
+            transform.Rotate(Vector3.up, 90, Space.World);
+        }
     }
 }
+
+

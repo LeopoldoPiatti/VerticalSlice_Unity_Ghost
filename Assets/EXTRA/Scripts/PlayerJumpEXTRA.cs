@@ -7,11 +7,11 @@ public class PlayerJumpEXTRA : MonoBehaviour
     public int maxAirJumps = 1;
     private int remainingAirJumps;
 
-    private GroundDetector groundDetector;
+    private GroundDetectorEXTRA groundDetector;
 
     void Start()
     {
-        groundDetector = GetComponent<GroundDetector>();
+        groundDetector = GetComponent<GroundDetectorEXTRA>();
         remainingAirJumps = maxAirJumps;
     }
 

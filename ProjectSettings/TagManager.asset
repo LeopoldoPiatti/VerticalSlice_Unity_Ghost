@@ -4,16 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerEyes
   - Floor
+  - Platform
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 

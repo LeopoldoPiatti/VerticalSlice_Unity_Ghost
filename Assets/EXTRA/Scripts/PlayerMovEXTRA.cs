@@ -6,13 +6,12 @@ public class PlayerMovEXTRA : MonoBehaviour
     public GameObject player;
     public Vector3 deltaMove;
     public float moveSpeed;
-    public float airborneMoveSpeed; // Nueva variable para el movimiento en el aire
-
-    private GroundDetector groundDetector;
+    public float airborneMoveSpeed;
+    private GroundDetectorEXTRA groundDetector;
 
     void Start()
     {
-        groundDetector = GetComponent<GroundDetector>();
+        groundDetector = GetComponent<GroundDetectorEXTRA>();
     }
 
     void Update()
@@ -24,13 +23,11 @@ public class PlayerMovEXTRA : MonoBehaviour
 
         if (groundDetector != null && groundDetector.grounded)
         {
-            // Movimiento en el suelo
-            deltaMove = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
+           deltaMove = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
         }
         else
         {
-            // Movimiento en el aire
-            deltaMove = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * airborneMoveSpeed * Time.deltaTime;
+           deltaMove = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * airborneMoveSpeed * Time.deltaTime;
         }
 
         player.transform.Translate(deltaMove);
