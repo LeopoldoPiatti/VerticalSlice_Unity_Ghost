@@ -2,27 +2,57 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float velocidadMovimiento = 5f;
-    public float velocidadRotacion = 45f;
+    public float velocidadMovimiento;
+    public float movSmootness;
+    public float velocidadRotacion;
+    public float zoomSpeed;
+    public float zoomTimer;
+    public float zoomSmootness;
+    private float originalSize;
+    private Camera mainCamera;
+    private bool isRightMouseButtonDown = false;
+    private Vector3 lastMousePosition;
+    public Transform target;
+
+    void Start()
+    {
+        mainCamera = Camera.main;
+        originalSize = mainCamera.orthographicSize;
+    }
 
     void Update()
     {
         MoverCamara();
         RotarCamara();
+        ZoomConRueda();
     }
 
     void MoverCamara()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        Vector3 direccion = new Vector3(horizontal, 0f, vertical).normalized;
-
-        if (direccion.magnitude >= 0.1f)
+        if (Input.GetMouseButtonDown(1))
         {
-            Vector3 movimiento = Camera.main.transform.TransformDirection(direccion);
-            movimiento.y = 0;
-            transform.Translate(movimiento * velocidadMovimiento * Time.deltaTime, Space.World);
+            isRightMouseButtonDown = true;
+            lastMousePosition = Input.mousePosition;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            isRightMouseButtonDown = false;
+        }
+
+        if (isRightMouseButtonDown)
+        {
+            Vector3 deltaMouse = Input.mousePosition - lastMousePosition;
+            lastMousePosition = Input.mousePosition;
+
+            Vector3 movimiento = new Vector3(deltaMouse.x, 0f, deltaMouse.y) * velocidadMovimiento * Time.deltaTime;
+            transform.Translate(movimiento, Space.World);
+        }
+        else
+        {
+            if (target != null)
+            {
+                transform.localPosition = Vector3.Lerp(transform.position, target.position, Time.deltaTime * movSmootness);
+            }
         }
     }
 
@@ -30,16 +60,34 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            // Rotar la cámara en sentido antihorario (en incrementos de 90 grados)
             transform.Rotate(Vector3.up, -90, Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Rotar la cámara en sentido horario (en incrementos de 90 grados)
             transform.Rotate(Vector3.up, 90, Space.World);
         }
     }
+
+    void ZoomConRueda()
+    {
+        float zoom = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        float newOrthographicSize = Mathf.Clamp(mainCamera.orthographicSize - zoom, 1f, 10f);
+
+        if (zoom != 0)
+        {
+            zoomTimer = 5f;
+        }
+
+        zoomTimer -= Time.deltaTime;
+
+        if (zoomTimer <= 0f)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, originalSize, Time.deltaTime * zoomSmootness);
+        }
+        else
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, newOrthographicSize, Time.deltaTime * zoomSmootness);
+        }
+    }
 }
-
-
