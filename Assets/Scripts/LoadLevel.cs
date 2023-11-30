@@ -31,13 +31,13 @@ public class LoadLevel : MonoBehaviour
     }
     public void PauseGame()
     {
-        Time.timeScale = 0f; // Set the time scale to 0 to pause the game
+        Time.timeScale = 0f;
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1f; // Set the time scale back to 1 to resume the game
+        Time.timeScale = 1f;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

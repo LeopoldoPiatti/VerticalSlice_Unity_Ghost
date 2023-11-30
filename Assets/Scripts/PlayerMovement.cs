@@ -17,41 +17,41 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        MovementInput();
+        //MovementInput();
         MovePlayer();
     }
 
-    void MovementInput()
-    {
-        if (groundDetector.grounded)
-        {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+    //void MovementInput()
+    //{
+    //    if (groundDetector.grounded)
+    //    {
+    //        float horizontalInput = Input.GetAxis("Horizontal");
+    //        float verticalInput = Input.GetAxis("Vertical");
 
-            float cameraYRotation = playerCameraObj.rotation.eulerAngles.y;
+    //        float cameraYRotation = playerCameraObj.rotation.eulerAngles.y;
 
-            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 0f))
-            {
-                accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
-            }
-            else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && cameraYRotation == 90f)
-            {
-                accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
-            }
-            else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 180f))
-            {
-                accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
-            }
-            else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == -90f))
-            {
-                accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
-            }
-            else 
-            {
-                accumulatedMovement = new Vector3(0f, 0f, verticalInput).normalized;
-            }
-        }
-    }
+    //        if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 0f))
+    //        {
+    //            accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
+    //        }
+    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && cameraYRotation == 90f)
+    //        {
+    //            accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
+    //        }
+    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 180f))
+    //        {
+    //            accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
+    //        }
+    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == -90f))
+    //        {
+    //            accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
+    //        }
+    //        else 
+    //        {
+    //            accumulatedMovement = new Vector3(0f, 0f, verticalInput).normalized;
+    //        }
+    //    }
+    //}
 
     void MovePlayer()
     {
@@ -66,20 +66,3 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 
-//void MovementInput()
-//{
-//    if (groundDetector.grounded)
-//    {
-//        float horizontalInput = Input.GetAxis("Horizontal");
-//        float verticalInput = Input.GetAxis("Vertical");
-
-//        if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
-//        {
-//            accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
-//        }
-//        else
-//        {
-//            accumulatedMovement = new Vector3(0f, 0f, verticalInput).normalized;
-//        }
-//    }
-//}

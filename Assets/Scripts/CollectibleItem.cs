@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CollectibleItem : MonoBehaviour
 {
-    public CameraShake cameraShake;
+    //public CameraShake cameraShake;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             CollectItem();
-            cameraShake.ShakeCamera();
+            //cameraShake.ShakeCamera();
         }
     }
 

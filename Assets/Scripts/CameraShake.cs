@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     public float shakeIntensity = 0.1f;
-    public float shakeDuration = 0.2f; // Nueva variable para la duración del temblor
+    public float shakeDuration = 0.2f;
 
     public void ShakeCamera()
     {
