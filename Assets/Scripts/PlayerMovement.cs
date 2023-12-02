@@ -17,41 +17,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //MovementInput();
+        MovementInput();
         MovePlayer();
     }
 
-    //void MovementInput()
-    //{
-    //    if (groundDetector.grounded)
-    //    {
-    //        float horizontalInput = Input.GetAxis("Horizontal");
-    //        float verticalInput = Input.GetAxis("Vertical");
+    void MovementInput()
+    {
+        if (groundDetector.grounded)
+        {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
-    //        float cameraYRotation = playerCameraObj.rotation.eulerAngles.y;
+            // Obtener la dirección de movimiento relativa a la cámara
+            Vector3 camForward = playerCameraObj.forward;
+            Vector3 camRight = playerCameraObj.right;
+            camForward.y = 0f;
+            camRight.y = 0f;
+            camForward.Normalize();
+            camRight.Normalize();
 
-    //        if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 0f))
-    //        {
-    //            accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
-    //        }
-    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && cameraYRotation == 90f)
-    //        {
-    //            accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
-    //        }
-    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == 180f))
-    //        {
-    //            accumulatedMovement = new Vector3(-horizontalInput, 0f, 0f).normalized;
-    //        }
-    //        else if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput) && (cameraYRotation == -90f))
-    //        {
-    //            accumulatedMovement = new Vector3(horizontalInput, 0f, 0f).normalized;
-    //        }
-    //        else 
-    //        {
-    //            accumulatedMovement = new Vector3(0f, 0f, verticalInput).normalized;
-    //        }
-    //    }
-    //}
+            // Obtener la dirección de movimiento combinando las direcciones relativas
+            accumulatedMovement = camForward * verticalInput + camRight * horizontalInput;
+        }
+    }
+
+
 
     void MovePlayer()
     {
@@ -60,9 +50,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (accumulatedMovement != Vector3.zero)
         {
-            Quaternion newRotation = Quaternion.LookRotation(accumulatedMovement);
+            // Calcular la rotación basada en la entrada del jugador
+            float angle = Mathf.Atan2(accumulatedMovement.x, accumulatedMovement.z) * Mathf.Rad2Deg;
+            Quaternion newRotation = Quaternion.Euler(0f, angle, 0f);
+
+            // Aplicar rotación suavemente
             rb.MoveRotation(Quaternion.Slerp(rb.rotation, newRotation, Time.deltaTime * rotationSpeed));
         }
     }
 }
-

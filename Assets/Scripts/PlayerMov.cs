@@ -30,7 +30,7 @@ public class PlayerMov : MonoBehaviour
                 //player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
             }
         }
-        RotarPlayer();
+       
     }
     void RotarPlayer()
     {
