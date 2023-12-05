@@ -16001,6 +16001,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8298110248105780204, guid: 99eb108e7d336134e8c14029c9381f95, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298110248105780204, guid: 99eb108e7d336134e8c14029c9381f95, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16283,7 +16291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667335845649761677, guid: a11b473d958878b48998f5e7ed617b8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3979637407893031607, guid: a11b473d958878b48998f5e7ed617b8b, type: 3}
       propertyPath: m_RootOrder

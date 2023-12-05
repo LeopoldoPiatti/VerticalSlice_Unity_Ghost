@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     public EnemyPeople enemyMovement;
     public Slider cooldownSlider;
+    private Rigidbody rb;
 
     void Start()
     {       
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         {
             cooldownSlider.value = 1.0f;
         }
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -49,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     IEnumerator Cooldown()
-    {
+    {        
         canAttack = false;
         float elapsedTime = 0.0f;
         while (elapsedTime < cooldownTime)
