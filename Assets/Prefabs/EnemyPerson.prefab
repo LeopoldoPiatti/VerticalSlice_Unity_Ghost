@@ -219,7 +219,7 @@ MonoBehaviour:
   points:
   - {fileID: 0}
   - {fileID: 0}
-  normalSpeed: 2
+  normalSpeed: 0
   fleeSpeed: 10
   fleeWaitTime: 10
   fleeDestination: {fileID: 0}
@@ -345,6 +345,11 @@ MonoBehaviour:
   damage: 1
   hitAnimationBool: Hit
   hitAnimationDuration: 2
+  raycastDistance: 3
+  rayOffset: {x: 0, y: 0, z: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &4740280715948816090
 PrefabInstance:
   m_ObjectHideFlags: 0

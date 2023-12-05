@@ -926,7 +926,7 @@ Transform:
   m_GameObject: {fileID: 7510618802494630666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24000001, y: 0.24000001, z: 0.24000001}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3967146720669453459}
@@ -1270,13 +1270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackKey: 32
-  radius: 5
+  radius: 3
   cooldownTime: 2
   canAttack: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   enemyMovement: {fileID: 0}
+  cooldownSlider: {fileID: 0}
 --- !u!114 &3324742012052704708
 MonoBehaviour:
   m_ObjectHideFlags: 0

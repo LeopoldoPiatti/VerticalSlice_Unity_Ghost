@@ -8,10 +8,11 @@ public class CollectibleItemRotation : MonoBehaviour
     public float floatSpeed;
     public float minFloatHeight;
     public float maxFloatHeight;
+    public Vector3 rotation;
 
     private void Update()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        transform.Rotate(rotation, rotationSpeed * Time.deltaTime);
         float newY = Mathf.Lerp(minFloatHeight, maxFloatHeight, Mathf.PingPong(Time.time * floatSpeed, 1f));
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }

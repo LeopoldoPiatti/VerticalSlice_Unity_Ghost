@@ -183,7 +183,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -252,14 +252,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121769087117217339}
-  m_LocalRotation: {x: -0.00000067427845, y: -0.70710677, z: 0.7071068, w: -0.0000006761402}
-  m_LocalPosition: {x: -0, y: -0.87, z: 1.73}
-  m_LocalScale: {x: 0.9787006, y: 0.9787006, z: 0.9787006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.74, z: 0.437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3979637407893031607}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1861737901649303882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,10 +277,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 3.46, y: 3.15, z: 0.20000036}
-  m_Center: {x: 0, y: 0, z: 0.000000052154064}
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &273058753465837112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +296,11 @@ MonoBehaviour:
   damage: 1
   hitAnimationBool: Hit
   hitAnimationDuration: 2
+  raycastDistance: 3
+  rayOffset: {x: 0, y: 0, z: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &8845068185416237372
 PrefabInstance:
   m_ObjectHideFlags: 0

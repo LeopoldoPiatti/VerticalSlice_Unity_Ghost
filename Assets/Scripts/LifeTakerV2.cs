@@ -8,21 +8,56 @@ public class LifeTakerV2 : MonoBehaviour
     public string hitAnimationBool = "Hit";
     public float hitAnimationDuration = 2f;
 
+    public float raycastDistance;
+    public Vector3 rayOffset;
+    public LayerMask playerLayerMask;
+
+    private void Update()
+    {
+        RaycastHit hit;
+        Vector3 rayDirection = transform.forward;
+        Debug.DrawRay(transform.position + rayOffset, rayDirection * raycastDistance, Color.green);
+        if (Physics.Raycast(transform.position + rayOffset, rayDirection, out hit, raycastDistance, playerLayerMask))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                GameManager.Instance.playerLives -= damage;
+                ////Animator playerAnimator = other.GetComponent<Animator>();
+
+                //if (playerAnimator != null)
+                //{
+                //    playerAnimator.SetBool(hitAnimationBool, true);
+                //    StartCoroutine(RevertToPreviousAnimation(playerAnimator, hitAnimationBool, hitAnimationDuration));
+                //}
+                //else
+                //{
+                //    Debug.LogError("Player Animator not found!");
+                //}
+            }
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        RaycastHit hit;
+        Vector3 rayDirection = transform.forward;
+        Debug.DrawRay(transform.position + rayOffset, rayDirection * raycastDistance, Color.green);
+        if (Physics.Raycast(transform.position + rayOffset, rayDirection, out hit, raycastDistance, playerLayerMask))
         {
-            GameManager.Instance.playerLives -= damage;
-            Animator playerAnimator = other.GetComponent<Animator>();
+            if (hit.collider.CompareTag("Player"))
+            {
+                GameManager.Instance.playerLives -= damage;
+                Animator playerAnimator = other.GetComponent<Animator>();
 
-            if (playerAnimator != null)
-            {
-                playerAnimator.SetBool(hitAnimationBool, true);
-                StartCoroutine(RevertToPreviousAnimation(playerAnimator, hitAnimationBool, hitAnimationDuration));
-            }
-            else
-            {
-                Debug.LogError("Player Animator not found!");
+                if (playerAnimator != null)
+                {
+                    playerAnimator.SetBool(hitAnimationBool, true);
+                    StartCoroutine(RevertToPreviousAnimation(playerAnimator, hitAnimationBool, hitAnimationDuration));
+                }
+                else
+                {
+                    Debug.LogError("Player Animator not found!");
+                }
             }
         }
     }
