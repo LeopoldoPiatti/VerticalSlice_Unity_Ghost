@@ -4,7 +4,7 @@ public class DoorMechanics : MonoBehaviour
 {
     public float rotationSpeed = 90f;
     public Vector3 rotationAxis = Vector3.up;
-    public int requiredKeys;
+    public int requiredKeys;    
     private bool isDoorOpen = false;
     public CameraShake cameraShake;
 
