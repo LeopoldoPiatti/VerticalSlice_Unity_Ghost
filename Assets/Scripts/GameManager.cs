@@ -15,16 +15,16 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // Si ya existe una instancia del GameManager, destruye la instancia actual.
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+        //// Si ya existe una instancia del GameManager, destruye la instancia actual.
+        //if (Instance != null && Instance != this)
+        //{
+        //    Destroy(this.gameObject);
+        //    return;
+        //}
 
-        // Si no hay instancia, establece esta instancia como la instancia activa.
+        //// Si no hay instancia, establece esta instancia como la instancia activa.
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
