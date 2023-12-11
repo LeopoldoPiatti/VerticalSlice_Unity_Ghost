@@ -16,11 +16,22 @@ public class EnemyPeople : MonoBehaviour
 
     public Transform fleeDestination;
 
+    public Animator humanAnim;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         SetSpeed(normalSpeed);
         SetDestination();
+        if (humanAnim == null)
+        {
+            GameObject humanRig = GameObject.Find("Human_l_rig");
+
+            if (humanRig != null)
+            {
+                humanAnim = humanRig.GetComponent<Animator>();
+            }
+        }
     }
 
     void Update()
@@ -29,13 +40,14 @@ public class EnemyPeople : MonoBehaviour
         {
             objective = (objective + 1) % points.Count;
             SetDestination();
+            humanAnim.SetBool("Run", false);
         }
 
         if (isFleeing)
         {
             timeSinceFleeStart += Time.deltaTime;
 
-            if (timeSinceFleeStart >= fleeWaitTime)
+            if (fleeWaitTime > 0f && timeSinceFleeStart >= fleeWaitTime)
             {
                 isFleeing = false;
                 timeSinceFleeStart = 0f;
@@ -60,6 +72,7 @@ public class EnemyPeople : MonoBehaviour
             navMeshAgent.SetDestination(fleeDestination.position);
             SetSpeed(fleeSpeed);
             isFleeing = true;
+            humanAnim.SetBool("Run", true);
         }
         else
         {

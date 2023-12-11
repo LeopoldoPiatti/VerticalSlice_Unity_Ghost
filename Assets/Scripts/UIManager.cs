@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        lives.text = "Lives: " + GameManager.Instance.playerLives.ToString();
-        keys.text = "Keys:" + GameManager.Instance.keysNeed.ToString();
+        lives.text = GameManager.Instance.playerLives.ToString();
+        keys.text = GameManager.Instance.keysNeed.ToString();
     }    
 }

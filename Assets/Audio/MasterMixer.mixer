@@ -96,17 +96,25 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
-  - {fileID: 24500006}
   - {fileID: 8378473895406754245}
-  m_StartSnapshot: {fileID: 24500006}
+  - {fileID: 1330443171576477325}
+  m_StartSnapshot: {fileID: 8378473895406754245}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 7d6067cf574e0b74791904c6d152c37e
+    name: AmbientVolume
   - guid: 10adef32c28aaa746ac682be9bb028ff
     name: MasterVolume
   - guid: e3da8f049c15dfa43b0e765f63313752
     name: MusicVolume
+  - guid: 66e5fe5a1e9bcfd46a9fdc0948695857
+    name: NPCsVolume
+  - guid: 6655776cf2f31ae48809d89db48d88f0
+    name: PlayerVolume
+  - guid: 13bfe96b2021cfd4aa50170d38cd19be
+    name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - 20f99d43a3c4a714a8fd9bb104cb7cf7
@@ -117,7 +125,7 @@ AudioMixerController:
     - 21d077c37a43b314ca7a10d83f846b17
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 8378473895406754245}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -153,22 +161,6 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!245 &24500006
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Outdoor
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: a66e9a67b6d867743a7e5d604ca98a2a
-  m_FloatValues:
-    10adef32c28aaa746ac682be9bb028ff: -0.037667945
-    e3da8f049c15dfa43b0e765f63313752: -0.16685188
-    13bfe96b2021cfd4aa50170d38cd19be: 0
-    6655776cf2f31ae48809d89db48d88f0: -2.2889833
-    7d6067cf574e0b74791904c6d152c37e: -0.025776558
-  m_TransitionOverrides: {}
 --- !u!243 &398842738953247964
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -188,6 +180,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &1330443171576477325
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Paused
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: eb454292a6bb1ae48a0e8d4e3fc0e9df
+  m_FloatValues:
+    10adef32c28aaa746ac682be9bb028ff: -15.574045
+    e3da8f049c15dfa43b0e765f63313752: -30.32013
+    769e577508e44444c9b1d963efc572f5: 3088
+    857220f97a21a6b4786a6cf9337c71e1: -300
+    66e5fe5a1e9bcfd46a9fdc0948695857: -3.9333012
+    13bfe96b2021cfd4aa50170d38cd19be: 0
+    6655776cf2f31ae48809d89db48d88f0: -1.5782808
+    7d6067cf574e0b74791904c6d152c37e: -2.8722944
+  m_TransitionOverrides: {}
 --- !u!243 &1499715243321189324
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -317,14 +328,16 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Indoor
+  m_Name: Unpaused
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 62d5fb8fb5ce2e44da8754e2c206ced6
   m_FloatValues:
-    10adef32c28aaa746ac682be9bb028ff: 0
+    10adef32c28aaa746ac682be9bb028ff: -0.002441872
+    e3da8f049c15dfa43b0e765f63313752: -22.003622
     769e577508e44444c9b1d963efc572f5: 3088
     857220f97a21a6b4786a6cf9337c71e1: -300
+    66e5fe5a1e9bcfd46a9fdc0948695857: -3.9333012
     13bfe96b2021cfd4aa50170d38cd19be: 0
-    6655776cf2f31ae48809d89db48d88f0: -2.2889833
-    7d6067cf574e0b74791904c6d152c37e: -4.560346
+    6655776cf2f31ae48809d89db48d88f0: -1.5782808
+    7d6067cf574e0b74791904c6d152c37e: -2.8722944
   m_TransitionOverrides: {}

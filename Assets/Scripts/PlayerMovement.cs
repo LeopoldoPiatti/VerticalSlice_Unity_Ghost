@@ -27,16 +27,12 @@ public class PlayerMovement : MonoBehaviour
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
-
-            // Obtener la dirección de movimiento relativa a la cámara
             Vector3 camForward = playerCameraObj.forward;
             Vector3 camRight = playerCameraObj.right;
             camForward.y = 0f;
             camRight.y = 0f;
             camForward.Normalize();
             camRight.Normalize();
-
-            // Obtener la dirección de movimiento combinando las direcciones relativas
             accumulatedMovement = camForward * verticalInput + camRight * horizontalInput;
         }
     }
@@ -50,11 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (accumulatedMovement != Vector3.zero)
         {
-            // Calcular la rotación basada en la entrada del jugador
             float angle = Mathf.Atan2(accumulatedMovement.x, accumulatedMovement.z) * Mathf.Rad2Deg;
             Quaternion newRotation = Quaternion.Euler(0f, angle, 0f);
-
-            // Aplicar rotación suavemente
             rb.MoveRotation(Quaternion.Slerp(rb.rotation, newRotation, Time.deltaTime * rotationSpeed));
         }
     }

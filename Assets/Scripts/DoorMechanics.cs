@@ -14,7 +14,8 @@ public class DoorMechanics : MonoBehaviour
 
     private void Start()
     {
-        mainCamera = Camera.main;        
+        mainCamera = Camera.main;
+        
     }
 
     private void Update()
@@ -27,7 +28,7 @@ public class DoorMechanics : MonoBehaviour
     }
 
     private void RotateDoor()
-    {        
+    {
         isDoorOpen = true;
         if (isDoorOpen == true)
         {
@@ -40,6 +41,7 @@ public class DoorMechanics : MonoBehaviour
             }
         }
     }
+
 
     private void LookDoorOpening()
     {
@@ -55,17 +57,41 @@ public class DoorMechanics : MonoBehaviour
     private void RestoreOriginalCameraPosition()
     {
         mainCamera.transform.localPosition = originalCameraPosition;
-    }
-
-
-    //private void LookDoorOpening()
-    //{
-    //    Vector3 currentCameraPosition = mainCamera.transform.position;
-    //    Vector3 targetCameraPosition = transform.position;
-    //    mainCamera.transform.position = Vector3.Lerp(currentCameraPosition, targetCameraPosition, Time.deltaTime);
-    //    if (isDoorOpen == false)
-    //    {
-    //        mainCamera.transform.position = originalCameraPosition;
-    //    }
-    //}
+    }    
 }
+
+//private void LookDoorOpening()
+//{
+//    Vector3 currentCameraPosition = mainCamera.transform.position;
+//    Vector3 targetCameraPosition = transform.position;
+//    mainCamera.transform.position = Vector3.Lerp(currentCameraPosition, targetCameraPosition, Time.deltaTime);
+//    if (isDoorOpen == false)
+//    {
+//        mainCamera.transform.position = originalCameraPosition;
+//    }
+//}
+
+//// Método que gira la puerta.
+//private void RotateDoor()
+//{
+//    // Establece que la puerta está abierta.
+//    isDoorOpen = true;
+
+//    // Verifica si la puerta está abierta.
+//    if (isDoorOpen == true)
+//    {
+//        // Rota la puerta alrededor del eje especificado.
+//        transform.Rotate(rotationAxis, rotationSpeed * Time.deltaTime);
+
+//        // Hace temblar la cámara en cada fotograma durante la rotación.
+//        cameraShake.ShakeCamera();
+
+//        // Verifica si la rotación alcanza cierto ángulo (90 grados en este caso).
+//        if (transform.rotation.eulerAngles.y >= 90f)
+//        {
+//            // Establece que la puerta está cerrada y desactiva este script.
+//            isDoorOpen = false;
+//            enabled = false;
+//        }
+//    }
+//}

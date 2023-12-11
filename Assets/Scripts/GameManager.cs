@@ -3,41 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int playerLives;
     public int keysNeed;
-    public Transform checkpointObj;
-    public Transform playerObj;
     public string sceneName;
+    public float delayTime = 2.0f;
+
+    public AudioSource playerSourceAudio;
+    public AudioClip endSound;
 
     void Awake()
-    {
-        //// Si ya existe una instancia del GameManager, destruye la instancia actual.
-        //if (Instance != null && Instance != this)
-        //{
-        //    Destroy(this.gameObject);
-        //    return;
-        //}
-
-        //// Si no hay instancia, establece esta instancia como la instancia activa.
+    {        
         Instance = this;
         //DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        if (playerSourceAudio == null)
+        {
+            GameObject playerAudio = GameObject.Find("Player");
+
+            if (playerAudio != null)
+            {
+                playerSourceAudio = playerAudio.GetComponent<AudioSource>();
+            }
+        }
     }
 
     private void Update()
     {
         if (playerLives <= 0)
         {
-            SceneManager.LoadScene(sceneName);
-            //playerObj.transform.position = checkpointObj.transform.position;
+            playerSourceAudio.PlayOneShot(endSound);
+            StartCoroutine(LoadSceneWithDelay());
         }
     }
-
-    public void LoadScene(string sceneName)
+    IEnumerator LoadSceneWithDelay()
     {
+        yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene(sceneName);
     }
 }

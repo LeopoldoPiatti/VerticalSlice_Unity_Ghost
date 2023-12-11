@@ -24,7 +24,7 @@ public class GhostAnimations : MonoBehaviour
     
     void Update()
     {        
-        AnimAttack();
+        AnimAttack();       
     }
 
     void AnimAttack()

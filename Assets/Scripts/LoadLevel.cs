@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
 
 public class LoadLevel : MonoBehaviour
 {
@@ -11,15 +14,16 @@ public class LoadLevel : MonoBehaviour
     public Transform newPosition;
 
     public string sceneName;
+
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot unpaused;
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1f;
     }
-    public void Salir()
-    {
-        Debug.Log("He Salido");
-        Application.Quit();
-    }
+    
     public void setactive(GameObject canvasactive)
     {
         canvasactive.SetActive(true);
@@ -32,21 +36,30 @@ public class LoadLevel : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        Lowpass();
     }
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        Lowpass();
     }
-    private void OnTriggerEnter(Collider other)
+    void Lowpass()
     {
-        if (other.CompareTag("Player"))
+        if (Time.timeScale == 0)
         {
-            //objectToActivate.SetActive(true);
-            //objectToDeactivate.SetActive(false);
-            SceneManager.LoadScene(sceneName);
-            // Cambiar la posición del jugador en los ejes X e Y
-            other.transform.SetPositionAndRotation(newPosition.position, newPosition.rotation);
+            paused.TransitionTo(.01f);
         }
-
+        else
+        {
+            unpaused.TransitionTo(0.1f);
+        }
     }
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }    
 }
