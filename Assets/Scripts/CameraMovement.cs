@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public float velocidadMovimiento;
-    public float movSmootness;
-    public float velocidadRotacion;
+    public float movSmootness;    
+    public float rotationSpeed;
     public float zoomSpeed;
     public float zoomTimer;
     public float zoomSmootness;
@@ -58,15 +58,21 @@ public class CameraController : MonoBehaviour
 
     void RotarCamara()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(Vector3.up, -90, Space.World);
+            RotateSmoothly(-1);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(Vector3.up, 90, Space.World);
+            RotateSmoothly(1);
         }
+    }
+
+    void RotateSmoothly(int direction)
+    {
+        Quaternion targetRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + (direction * 90), 0);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void ZoomConRueda()

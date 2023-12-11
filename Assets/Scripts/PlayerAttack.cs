@@ -10,8 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public float delayBeforeDisable = 1.0f;
     public float cooldownTime = 2.0f;
     public bool canAttack = true;
-    public LayerMask enemyLayer;
-    public EnemyPeople enemyMovement;
+    public LayerMask enemyLayer;    
     public Slider cooldownSlider;
 
     void Start()

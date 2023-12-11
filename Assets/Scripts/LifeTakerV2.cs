@@ -8,6 +8,10 @@ public class LifeTakerV2 : MonoBehaviour
     public Vector3 rayOffset;
     public LayerMask playerLayerMask;
 
+    public float startAngle;
+    public float endAngle;
+    public float angleStep = 5f; // Incremento en grados para cada rayo
+
     private bool canDamage = true;
     public float cooldownTime = 5f;
 
@@ -21,21 +25,29 @@ public class LifeTakerV2 : MonoBehaviour
 
     private void Update()
     {
+        ShootRays();
+    }
+
+    void ShootRays()
+    {
         if (canDamage)
         {
-            Vector3 rayDirection = transform.forward;
-            RaycastHit hit;
-            Debug.DrawRay(transform.position + rayOffset, rayDirection * raycastDistance, Color.green);
-
-            if (Physics.Raycast(transform.position + rayOffset, rayDirection, out hit, raycastDistance, playerLayerMask))
+            for (float currentAngle = startAngle; currentAngle <= endAngle; currentAngle += angleStep)
             {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    GameManager.Instance.playerLives -= damage;
-                    flashLightFire.PlayOneShot(flashLightClip);
+                Vector3 rayDirection = Quaternion.AngleAxis(currentAngle, transform.up) * transform.forward;
+                RaycastHit hit;
+                Debug.DrawRay(transform.position + rayOffset, rayDirection * raycastDistance, Color.green);
 
-                    canDamage = false;
-                    StartCoroutine(CooldownTimer());
+                if (Physics.Raycast(transform.position + rayOffset, rayDirection, out hit, raycastDistance, playerLayerMask))
+                {
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        GameManager.Instance.playerLives -= damage;
+                        flashLightFire.PlayOneShot(flashLightClip);
+
+                        canDamage = false;
+                        StartCoroutine(CooldownTimer());
+                    }
                 }
             }
         }

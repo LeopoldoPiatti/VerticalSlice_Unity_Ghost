@@ -26,8 +26,8 @@ public class PlayerMov : MonoBehaviour
 
             if (player.transform.position != Vector3.zero)
             {
-                //Quaternion newRotation = Quaternion.LookRotation(deltaMove.normalized);
-                //player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
+                Quaternion newRotation = Quaternion.LookRotation(deltaMove.normalized);
+                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
             }
         }
        
