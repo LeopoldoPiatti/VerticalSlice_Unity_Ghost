@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private GroundDetector groundDetector;
     public Vector3 accumulatedMovement;
-    public Transform playerCameraObj;    
+    public Transform playerCameraObj;
+    public GameObject restartPosition;
+    public GameObject player;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementInput();
         MovePlayer();
+        RestartPlayer();
     }
 
     void MovementInput()
@@ -37,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
     void MovePlayer()
     {
         Vector3 newPosition = rb.position + accumulatedMovement * moveDistance;
@@ -49,6 +50,14 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(accumulatedMovement.x, accumulatedMovement.z) * Mathf.Rad2Deg;
             Quaternion newRotation = Quaternion.Euler(0f, angle, 0f);
             rb.MoveRotation(Quaternion.Slerp(rb.rotation, newRotation, Time.deltaTime * rotationSpeed));
+        }
+    }
+
+    void RestartPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            player.transform.position = restartPosition.transform.position;
         }
     }
 }

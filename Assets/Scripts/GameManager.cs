@@ -42,10 +42,25 @@ public class GameManager : MonoBehaviour
             playerSourceAudio.PlayOneShot(endSound);
             StartCoroutine(LoadSceneWithDelay());
         }
+
+        Cheats();
     }
     IEnumerator LoadSceneWithDelay()
     {
         yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene(sceneName);
+    }
+
+    void Cheats()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            playerLives++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            keysNeed++;
+        }
     }
 }

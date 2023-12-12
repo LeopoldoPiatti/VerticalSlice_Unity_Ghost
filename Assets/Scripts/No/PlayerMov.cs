@@ -29,7 +29,7 @@ public class PlayerMov : MonoBehaviour
                 Quaternion newRotation = Quaternion.LookRotation(deltaMove.normalized);
                 player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
             }
-        }
+        }    
        
     }
     void RotarPlayer()
@@ -44,4 +44,6 @@ public class PlayerMov : MonoBehaviour
             transform.Rotate(Vector3.up, 90, Space.World);
         }
     }
+
+
 }

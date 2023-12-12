@@ -4,7 +4,7 @@ public class RayByAngle : MonoBehaviour
 {
     public float startAngle;
     public float endAngle;
-    public float angleStep = 5f; // Incremento en grados para cada rayo
+    public float angleStep = 5f;
     public float distance = 1f;
 
     void Update()

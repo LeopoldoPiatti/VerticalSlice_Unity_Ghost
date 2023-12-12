@@ -8,11 +8,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI lives;
     public TextMeshProUGUI keys;
     
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         lives.text = GameManager.Instance.playerLives.ToString();
