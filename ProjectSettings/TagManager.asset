@@ -4,21 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerEyes
   - Floor
-  - Platform
-  - Enemy
-  - Flashlight
   - HideObj
+  - Flashlight
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - Player
   - Water
   - UI
-  - Player
   - Ground
+  - Enemy
   - Damage
   - HideObj
   - 

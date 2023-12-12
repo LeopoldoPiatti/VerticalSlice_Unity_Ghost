@@ -1,1 +1,0 @@
-# VerticalSlice_Unity_Ghost

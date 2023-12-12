@@ -58,12 +58,12 @@ public class CameraController : MonoBehaviour
 
     void RotarCamara()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.E))
         {
             RotateSmoothly(-1);
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             RotateSmoothly(1);
         }
