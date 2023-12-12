@@ -3023,6 +3023,8 @@ MonoBehaviour:
   rotationSpeed: 10
   accumulatedMovement: {x: 0, y: 0, z: 0}
   playerCameraObj: {fileID: 0}
+  restartPosition: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &645850124
 MonoBehaviour:
   m_ObjectHideFlags: 0

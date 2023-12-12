@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8745099, g: 0.909804, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.9607843, b: 0.047058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8745099, g: 0.909804, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.9607844, b: 0.050980397, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2119,8 +2119,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255525
-  m_fontColor: {r: 0.64705884, g: 1, b: 0, a: 1}
+    rgba: 4279104768
+  m_fontColor: {r: 0, g: 0.9607844, b: 0.050980397, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2818,6 +2818,8 @@ MonoBehaviour:
   rotationSpeed: 10
   accumulatedMovement: {x: 0, y: 0, z: 0}
   playerCameraObj: {fileID: 0}
+  restartPosition: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &645850124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4737,8 +4739,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255525
-  m_fontColor: {r: 0.64705884, g: 1, b: 0, a: 1}
+    rgba: 4279104768
+  m_fontColor: {r: 0, g: 0.9607844, b: 0.050980397, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
