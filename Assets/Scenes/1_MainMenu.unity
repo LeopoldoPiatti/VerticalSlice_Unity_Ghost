@@ -3418,14 +3418,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackKey: 32
-  radius: 3
-  delayBeforeDisable: 1
   cooldownTime: 10
   canAttack: 1
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
   cooldownSlider: {fileID: 0}
+  activatedObject: {fileID: 0}
 --- !u!114 &645850125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6934,7 +6930,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9555,7 +9551,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -581,7 +581,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1654,7 +1654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.209, y: 0.5410711}
   m_AnchorMax: {x: 0.8051434, y: 0.6934876}
-  m_AnchoredPosition: {x: 0.49987793, y: 98.86182}
+  m_AnchoredPosition: {x: 0.49987787, y: 0}
   m_SizeDelta: {x: -1, y: -37.769485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41728716
@@ -3792,7 +3792,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5474,7 +5474,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7554,7 +7554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.209, y: 0.7643524}
   m_AnchorMax: {x: 0.8051434, y: 0.89904815}
-  m_AnchoredPosition: {x: 0.49987793, y: 42.913757}
+  m_AnchoredPosition: {x: 0.49987787, y: 0}
   m_SizeDelta: {x: -1, y: -33.14569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177653808
@@ -9027,7 +9027,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16131,7 +16131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.69779986}
   m_AnchorMax: {x: 0.995051, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.2630005}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -466.9044, y: -0.5266113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447368495
@@ -16298,7 +16298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6973081}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.44995117, y: 0.1230011}
+  m_AnchoredPosition: {x: -0.44995117, y: 0}
   m_SizeDelta: {x: -462.8245, y: -0.24560547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461384386
@@ -21054,7 +21054,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28129,7 +28129,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28921,7 +28921,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -35321,7 +35321,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -44388,7 +44388,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -45695,7 +45695,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -46572,7 +46572,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47317,7 +47317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.042227793, y: 0.308435}
   m_AnchorMax: {x: 0.18886158, y: 0.9001287}
-  m_AnchoredPosition: {x: -1.5, y: -0.26654053}
+  m_AnchoredPosition: {x: -1.5, y: 0}
   m_SizeDelta: {x: -3, y: 0.5331116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1318221222
@@ -48595,7 +48595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.209, y: 0.31491646}
   m_AnchorMax: {x: 0.8051434, y: 0.47425583}
-  m_AnchoredPosition: {x: 0.49987793, y: 156.96844}
+  m_AnchoredPosition: {x: 0.49987787, y: 0}
   m_SizeDelta: {x: -1, y: -39.57585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367020530
@@ -52085,7 +52085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.26000002}
   m_AnchorMax: {x: 0.9784099, y: 0.38980073}
-  m_AnchoredPosition: {x: 5.474304, y: -0.78723145}
+  m_AnchoredPosition: {x: 5.474304, y: 0}
   m_SizeDelta: {x: -12.054077, y: 4.4681396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442406641
@@ -53761,7 +53761,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -55534,7 +55534,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -58412,7 +58412,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -63001,7 +63001,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -64977,6 +64977,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 1659e6ab551948b49bccf0290082b851, type: 2}
+  masterSlider: {fileID: 1410351571}
+  musicSlider: {fileID: 1977283742}
+  sfxSlider: {fileID: 1693954621}
 --- !u!1001 &1787471451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67419,7 +67422,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -67522,7 +67525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.92447925, y: 0.8871482}
   m_AnchorMax: {x: 0.994, y: 0.9892223}
-  m_AnchoredPosition: {x: -0.38012695, y: -1.0960693}
+  m_AnchoredPosition: {x: -0.38012695, y: 0}
   m_SizeDelta: {x: 1.3109131, y: 0.79541016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863895735
@@ -69920,7 +69923,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -75641,7 +75644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7169543}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: 0.46900177}
+  m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: -478.4736, y: -0.93847656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060215579
@@ -77143,7 +77146,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -77740,7 +77743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31318042, y: 0.041717883}
   m_AnchorMax: {x: 0.6935902, y: 0.24228212}
-  m_AnchoredPosition: {x: -1.0499268, y: 222.5748}
+  m_AnchoredPosition: {x: -1.0499268, y: 0}
   m_SizeDelta: {x: -0.15106201, y: -52.85727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131614378
@@ -80902,7 +80905,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
